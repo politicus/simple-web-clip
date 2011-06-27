@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>File uid:</b>
+  <%= @clip.file_uid %>
+</p>
+
+<p>
+  <b>File name:</b>
+  <%= @clip.file_name %>
+</p>
+
+<p>
+  <b>File ext:</b>
+  <%= @clip.file_ext %>
+</p>
+
+<p>
+  <b>File size:</b>
+  <%= @clip.file_size %>
+</p>
+
+
+<%= link_to 'Edit', edit_clip_path(@clip) %> |
+<%= link_to 'Back', clips_path %>

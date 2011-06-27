@@ -1,0 +1,56 @@
+<h1>Listing clips</h1>
+
+<table>
+  <tr>
+    <th>File uid</th>
+    <th>File name</th>
+    <th>File ext</th>
+    <th>File size</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clips.each do |clip| %>
+  <tr>
+    <td><%= clip.file_uid %></td>
+    <td><%= link_to clip.file_name, clip.file.url %></td>
+    <td><%= clip.file_ext %></td>
+    <td><%= clip.file_size %></td>
+    <td><%= link_to 'Show', clip %></td>
+    <td><%= link_to 'Edit', edit_clip_path(clip) %></td>
+    <td><%= link_to 'Destroy', clip, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<hr />
+<%= file_field_tag 'clip[file]' %>
+
+<%= javascript_tag do %>
+$(function () {
+
+  $('input[type=file]').change(function() {
+      $('<img id="loadingicon" src="images/loadingicon.gif" />').insertAfter(this);
+      $(this).upload('/clips.json', function(res) {
+        $('<ul class="uploadedfile">'
+          + '<li>'
+          + '<b>file_uid:</b>'
+          + res.file_uid
+          + '</li>'
+          + '<li>'
+          + '<b>file_name:</b>'
+          + res.file_name
+          + '</li>'
+          + '<li>'
+          + '<b>url:</b>'
+          + res.url
+          + '</li>'
+          + '</ul>').insertAfter(this);
+        $('img#loadingicon').remove();
+        alert('File uploaded');
+      }, 'json');
+  });
+
+});
+<% end -%>

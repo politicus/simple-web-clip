@@ -1,0 +1,22 @@
+development:
+  host: localhost
+  database: simple_web_clip_development
+
+test:
+  host: localhost
+  database: simple_web_clip_test
+
+# set these environment variables on your prod server
+production:
+  # host: <%= ENV['MONGOID_HOST'] %>
+  host: localhost
+  # port: <%= ENV['MONGOID_PORT'] %>
+  # username: <%= ENV['MONGOID_USERNAME'] %>
+  # password: <%= ENV['MONGOID_PASSWORD'] %>
+  # database: <%= ENV['MONGOID_DATABASE'] %>
+  database: simple_web_clip_production
+  # slaves:
+  #   - host: slave1.local
+  #     port: 27018
+  #   - host: slave2.local
+  #     port: 27019
