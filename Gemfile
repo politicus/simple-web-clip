@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.9'
+gem 'rails', '3.0.10'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -37,4 +37,3 @@ gem 'rack-cache', :require => 'rack/cache'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'jquery-rails'
-gem 'rake', '0.8.7'
